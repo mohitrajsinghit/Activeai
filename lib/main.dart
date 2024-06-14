@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
         useMaterial3: true,
       ),
-      home: const DietView(),
+      home: const StartedView(),
     );
   }
 }
