@@ -37,7 +37,7 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset(
-                "assets/img/signup1.png", // add the file extension
+                "assets/img/signup1.png",
                 width: media.width,
                 fit: BoxFit.fitWidth,
               ),
@@ -56,31 +56,24 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
-                    // RoundPhoneField(
-                    //   hitText: "Enter your mobile number",
-                    //   controller: _mobile,
-                    // ),
-
                     IntlPhoneField(
-  focusNode: focusNode,
-  decoration: const InputDecoration(
-    labelText: 'Phone Number',
-    labelStyle: TextStyle(color: Colors.grey), // Set label color to grey
-    border: OutlineInputBorder(
-      borderSide: BorderSide(),
-    ),
-  ),
-  style: const TextStyle(color: Colors.white), // Use `style` instead of `inputStyle`
-  languageCode: "en",
-  onChanged: (phone) {
-    print(phone.completeNumber);
-  },
-  onCountryChanged: (country) {
-    print('Country changed to: ' + country.name);
-  },
-),
-
-
+                      focusNode: focusNode,
+                      decoration: const InputDecoration(
+                        labelText: 'Phone Number',
+                        labelStyle: TextStyle(color: Colors.grey),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(),
+                        ),
+                      ),
+                      style: const TextStyle(color: Colors.white),
+                      languageCode: "en",
+                      onChanged: (phone) {
+                        print(phone.completeNumber);
+                      },
+                      onCountryChanged: (country) {
+                        print('Country changed to: ' + country.name);
+                      },
+                    ),
                     SizedBox(height: media.width * 0.02),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
