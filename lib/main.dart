@@ -1,4 +1,8 @@
+import 'package:activeai/view/Main_Tab_Page/Diet/diet_view.dart';
+import 'package:activeai/view/Main_Tab_Page/Home/home_view.dart';
+import 'package:activeai/view/Main_Tab_Page/Workout/workout/dumbbellInclineflyespage.dart';
 import 'package:activeai/view/Main_Tab_Page/Workout/workout_view.dart';
+import 'package:activeai/view/complete_profile/dob.dart';
 import 'package:activeai/view/complete_profile/what_is_your_goal.dart';
 import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:activeai/view/on_boarding/started_view.dart';
@@ -11,7 +15,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
         useMaterial3: true,
       ),
-      home: const StartedView(),
+      home: const DietView(),
     );
   }
 }

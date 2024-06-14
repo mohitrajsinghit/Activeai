@@ -13,7 +13,7 @@ class HealthDetails extends StatefulWidget {
 
 class _HealthDetailsState extends State<HealthDetails> {
   late Size media;
-  Set<String> selectedHealth = {}; // Initialize selectedHealth as an empty set
+  Set<String> selectedHealth = {};
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +70,6 @@ class _HealthDetailsState extends State<HealthDetails> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const Text(
@@ -129,7 +128,6 @@ class _HealthDetailsState extends State<HealthDetails> {
                         style: TextStyle(
                           color: Colors.grey,
                           decoration: TextDecoration.underline,
-                          decorationColor: Colors.grey,
                           fontFamily: "Roboto",
                           fontSize: 20,
                           fontWeight: FontWeight.w300,
@@ -142,7 +140,6 @@ class _HealthDetailsState extends State<HealthDetails> {
                         child: RoundButton(
                           title: "Continue",
                           onPressed: () {
-                            // Add your onPressed logic here
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -151,8 +148,7 @@ class _HealthDetailsState extends State<HealthDetails> {
                           },
                         ),
                       ),
-                      SizedBox(
-                          height: 20), // Add some extra space at the bottom
+                      SizedBox(height: 20), // Add some extra space at the bottom
                     ],
                   ),
                 ),
