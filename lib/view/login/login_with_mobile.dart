@@ -62,21 +62,24 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
                     // ),
 
                     IntlPhoneField(
-                      focusNode: focusNode,
-                      decoration: const InputDecoration(
-                        labelText: 'Phone Number',
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(),
-                        ),
-                      ),
-                      languageCode: "en",
-                      onChanged: (phone) {
-                        print(phone.completeNumber);
-                      },
-                      onCountryChanged: (country) {
-                        print('Country changed to: ' + country.name);
-                      },
-                    ),
+  focusNode: focusNode,
+  decoration: const InputDecoration(
+    labelText: 'Phone Number',
+    labelStyle: TextStyle(color: Colors.grey), // Set label color to grey
+    border: OutlineInputBorder(
+      borderSide: BorderSide(),
+    ),
+  ),
+  style: const TextStyle(color: Colors.white), // Use `style` instead of `inputStyle`
+  languageCode: "en",
+  onChanged: (phone) {
+    print(phone.completeNumber);
+  },
+  onCountryChanged: (country) {
+    print('Country changed to: ' + country.name);
+  },
+),
+
 
                     SizedBox(height: media.width * 0.02),
                     Row(

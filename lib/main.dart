@@ -4,6 +4,7 @@ import 'package:activeai/view/Main_Tab_Page/Workout/workout/dumbbellInclineflyes
 import 'package:activeai/view/Main_Tab_Page/Workout/workout_view.dart';
 import 'package:activeai/view/complete_profile/dob.dart';
 import 'package:activeai/view/complete_profile/what_is_your_goal.dart';
+import 'package:activeai/view/login/login_with_mobile.dart';
 import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:activeai/view/on_boarding/started_view.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
         useMaterial3: true,
       ),
-      home: const StartedView(),
+      home: const LoginWithMobile(),
     );
   }
 }
