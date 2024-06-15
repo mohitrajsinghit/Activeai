@@ -1,6 +1,4 @@
 import 'package:activeai/common/colo_extension.dart';
-import 'package:activeai/common_widget/custom_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -191,6 +189,7 @@ class _DumbbellInclineFlyesPageState extends State<DumbbellInclineFlyesPage> {
                       onPressed: _addSet,
                     ),
                   ),
+                  SizedBox(height: media.width * 0.04),
                 ],
               ),
             ),

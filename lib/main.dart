@@ -1,5 +1,7 @@
+import 'package:activeai/view/Main_Tab_Page/Diet/breakfast/hard_boiled_egg.dart';
 import 'package:activeai/view/Main_Tab_Page/Diet/diet_view.dart';
 import 'package:activeai/view/Main_Tab_Page/Home/home_view.dart';
+import 'package:activeai/view/Main_Tab_Page/Profile/profile_view.dart';
 import 'package:activeai/view/Main_Tab_Page/Workout/workout/dumbbellInclineflyespage.dart';
 import 'package:activeai/view/Main_Tab_Page/Workout/workout_view.dart';
 import 'package:activeai/view/complete_profile/dob.dart';
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
         useMaterial3: true,
       ),
-      home: const LoginWithMobile(),
+      home: const MainTabView(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:activeai/view/Main_Tab_Page/Workout/workout/dumbbellInclineflyespage.dart';
+import 'package:activeai/view/Main_Tab_Page/Diet/breakfast/hard_boiled_egg.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -132,8 +132,14 @@ class _DietViewState extends State<DietView> {
                   _buildSection(
                     title: 'Breakfast',
                     items: [
-                      
-                      _buildDietItem('assets/img/hbe.png', 'Hard Boiled Eggs'),
+                      _buildDietItem('assets/img/hbe.png', 'Hard Boiled Eggs',
+                          onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HardBoiledEgg()),
+                        );
+                      }),
                       SizedBox(
                         height: media.width * 0.04,
                       ),
@@ -177,7 +183,8 @@ class _DietViewState extends State<DietView> {
                       SizedBox(
                         height: media.width * 0.04,
                       ),
-                      _buildDietItem('assets/img/a_w_c.png', 'Almonds/walnuts/cashews'),
+                      _buildDietItem(
+                          'assets/img/a_w_c.png', 'Almonds/walnuts/cashews'),
                       SizedBox(
                         height: media.width * 0.04,
                       ),
@@ -241,34 +248,38 @@ class _DietViewState extends State<DietView> {
     );
   }
 
-  Widget _buildDietItem(String imagePath, String itemName) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 25, bottom: 20),
-      child: Row(
-        children: [
-          Image.asset(
-            imagePath,
-            width: 90,
-            height: 90,
-          ),
-          SizedBox(width: 30.5), // Added SizedBox for spacing
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  itemName,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
+  Widget _buildDietItem(String imagePath, String itemName,
+      {VoidCallback? onTap}) {
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 25, bottom: 20),
+        child: Row(
+          children: [
+            Image.asset(
+              imagePath,
+              width: 90,
+              height: 90,
             ),
-          ),
-        ],
+            SizedBox(width: 30.5), // Added SizedBox for spacing
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    itemName,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
