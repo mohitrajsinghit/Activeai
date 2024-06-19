@@ -45,12 +45,15 @@ class _ProfileViewState extends State<ProfileView> {
           ),
           Positioned(
             left: 13,
-            right: 13, 
-            top: 190, 
+            right: 13,
+            top: 167,
             child: _buildBox2(
-              
-              profileImage:
-                  'assets/img/profile_circle_image.png', 
+              profileImage: 'assets/img/profile_circle_image.png',
+              username: 'Jackson',
+              followers: '10K',
+              following: '200',
+              points: '0',
+              pointsImage: 'assets/img/coin.png', // Path to the coin image
             ),
           ),
         ],
@@ -92,8 +95,12 @@ class _ProfileViewState extends State<ProfileView> {
   }
 
   Widget _buildBox2({
-    
     required String profileImage,
+    required String username,
+    required String followers,
+    required String following,
+    required String points,
+    required String pointsImage,
   }) {
     return Stack(
       clipBehavior: Clip.none,
@@ -102,18 +109,58 @@ class _ProfileViewState extends State<ProfileView> {
           clipper: HalfMoonClipper(),
           child: Container(
             width: 404,
-            height: 102,
+            height: 120,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 130, 123, 123).withOpacity(0.9),
               borderRadius: BorderRadius.circular(25),
             ),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //content here
-
-
+                const SizedBox(height: 15),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 25, top: 40), // Add padding to the username
+                      child: Text(
+                        username,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    const SizedBox(
+                        width:
+                            27), // Add a gap between the username and the stats
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              _buildStatColumn(followers, 'Followers'),
+                              _buildDivider(),
+                              _buildStatColumn(following, 'Following'),
+                              _buildDivider(),
+                              Expanded(
+                                child: _buildStatWithIcon(
+                                    points, 'Points', pointsImage),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
@@ -130,6 +177,80 @@ class _ProfileViewState extends State<ProfileView> {
       ],
     );
   }
+
+  Widget _buildStatColumn(String count, String label) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          count,
+          style: const TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStatWithIcon(String value, String label, String iconPath) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Text(
+              value,
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+            const SizedBox(width: 4),
+            Image.asset(
+              iconPath,
+              width: 20,
+              height: 20,
+              fit: BoxFit.contain,
+            ),
+          ],
+        ),
+        const SizedBox(height: 4),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+          ),
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDivider() {
+    return Container(
+      height: 40,
+      width: 1,
+      color: Colors.white.withOpacity(0.5),
+      margin: const EdgeInsets.symmetric(horizontal: 8.0),
+    );
+  }
 }
 
 class HalfMoonClipper extends CustomClipper<Path> {
@@ -139,8 +260,11 @@ class HalfMoonClipper extends CustomClipper<Path> {
     path.lineTo(0, size.height);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, 0);
-    path.addArc(Rect.fromCircle(center: Offset(size.width / 2, 0), radius: 50),
-        0, -3.14);
+    path.addArc(
+      Rect.fromCircle(center: Offset(size.width / 2, 0), radius: 50),
+      0,
+      -3.14,
+    );
     path.close();
     return path;
   }
