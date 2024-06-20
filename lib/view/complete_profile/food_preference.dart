@@ -53,7 +53,7 @@ class _FoodPreferenceState extends State<FoodPreference> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 75,
+                    height: 60,
                   ),
                   LinearProgressIndicator(
                     value: 0.625,
@@ -88,7 +88,7 @@ class _FoodPreferenceState extends State<FoodPreference> {
             ),
           ),
           Positioned(
-            top: 130, // Center vertically
+            top: 90, // Center vertically
             left: (media.width - 105) / 2, // Center horizontally
             child: Image.asset(
               "assets/img/food.png",
@@ -98,7 +98,7 @@ class _FoodPreferenceState extends State<FoodPreference> {
             ),
           ),
           Positioned(
-            top: 250,
+            top: 220,
             left: 0,
             right: 0,
             child: Padding(
@@ -156,7 +156,7 @@ class _FoodPreferenceState extends State<FoodPreference> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: media.width * 0.08),
+                  SizedBox(height: media.width * 0.06),
                   Container(
                     height: 60,
                     child: RoundButton(

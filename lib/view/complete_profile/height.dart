@@ -181,7 +181,7 @@ class _HeightState extends State<Height> {
             width: 73.01,
             height: 178.5,
             left: MediaQuery.of(context).size.width / 2 - 73.01 / 2,
-            top: 100,
+            top: 70,
             child: Image.asset(
               "assets/img/height.png",
               width: 73.01,
@@ -190,7 +190,7 @@ class _HeightState extends State<Height> {
             ),
           ),
           Positioned(
-            top: 270,
+            top: 220,
             left: 0,
             right: 0,
             child: Padding(

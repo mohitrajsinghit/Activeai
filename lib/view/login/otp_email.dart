@@ -96,7 +96,7 @@ class _OTPEmailState extends State<OTPEmail> {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 27,
-                fontFamily: 'Roboto', 
+                fontFamily: 'Roboto',
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -154,7 +154,7 @@ class _OTPEmailState extends State<OTPEmail> {
                   ),
               ],
             ),
-            SizedBox(height: media.width * 0.13),
+            SizedBox(height: media.width * 0.1),
             Padding(
               padding: const EdgeInsets.symmetric(),
               child: TextButton(
@@ -174,9 +174,9 @@ class _OTPEmailState extends State<OTPEmail> {
                 ),
               ),
             ),
-            SizedBox(height: media.width * 0.3),
+            SizedBox(height: media.width * 0.1),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 35),
+              padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Container(
                 width: 360,
                 height: 63,

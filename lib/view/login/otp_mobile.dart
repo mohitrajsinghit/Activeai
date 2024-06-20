@@ -154,7 +154,7 @@ class _OTPMobileState extends State<OTPMobile> {
                   ),
               ],
             ),
-            SizedBox(height: media.width * 0.13),
+            SizedBox(height: media.width * 0.1),
             Padding(
               padding: const EdgeInsets.symmetric(),
               child: TextButton(
@@ -174,7 +174,7 @@ class _OTPMobileState extends State<OTPMobile> {
                 ),
               ),
             ),
-            SizedBox(height: media.width * 0.3),
+            SizedBox(height: media.width * 0.1),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 35),
               child: Container(

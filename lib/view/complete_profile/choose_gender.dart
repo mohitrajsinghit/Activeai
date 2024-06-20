@@ -89,7 +89,7 @@ class _ChooseGenderState extends State<ChooseGender> {
             ),
           ),
           Positioned(
-            top: 82,
+            top: 70,
             left: media.width / 2 - 73.01 / 2,
             child: Image.asset(
               "assets/img/male_female.png",
@@ -99,7 +99,7 @@ class _ChooseGenderState extends State<ChooseGender> {
             ),
           ),
           Positioned(
-            top: 240,
+            top: 220,
             left: 0,
             right: 0,
             child: Padding(
@@ -117,7 +117,7 @@ class _ChooseGenderState extends State<ChooseGender> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: media.width * 0.07),
+                  SizedBox(height: media.width * 0.06),
                   Container(
                     width: 308,
                     height: 80,
@@ -147,7 +147,7 @@ class _ChooseGenderState extends State<ChooseGender> {
                       },
                     ),
                   ),
-                  SizedBox(height: media.width * 0.06),
+                  SizedBox(height: media.width * 0.05),
                   Container(
                     width: 308,
                     height: 80,
@@ -161,7 +161,7 @@ class _ChooseGenderState extends State<ChooseGender> {
                       },
                     ),
                   ),
-                  SizedBox(height: media.width * 0.07),
+                  SizedBox(height: media.width * 0.06),
                   const Text(
                     "You can do this later",
                     style: TextStyle(
@@ -173,7 +173,7 @@ class _ChooseGenderState extends State<ChooseGender> {
                       fontWeight: FontWeight.w300,
                     ),
                   ),
-                  SizedBox(height: media.width * 0.08),
+                  SizedBox(height: media.width * 0.07),
                   Container(
                     height: 60,
                     child: RoundButton(

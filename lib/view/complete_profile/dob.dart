@@ -89,7 +89,7 @@ class _DOBState extends State<DOB> {
             ),
           ),
           Positioned(
-            top: 90,
+            top: 70,
             left: media.width / 2 - 73.01 / 2,
             child: Image.asset(
               "assets/img/cake.png",
@@ -99,7 +99,7 @@ class _DOBState extends State<DOB> {
             ),
           ),
           Positioned(
-            top: 260,
+            top: 220,
             left: 0,
             right: 0,
             child: Padding(
