@@ -132,12 +132,12 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
                         },
                       ),
                     ),
-                    SizedBox(height: media.width * 0.02),
+                    SizedBox(height: media.width * 0.01),
                     const Text(
                       "or",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    SizedBox(height: media.width * 0.03),
+                    SizedBox(height: media.width * 0.01),
                     Container(
                       width: 360,
                       height: 63,
@@ -153,7 +153,7 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
                         },
                       ),
                     ),
-                    SizedBox(height: media.width * 0.03),
+                    SizedBox(height: media.width * 0.01),
                     Container(
                       width: 360,
                       height: 63,
@@ -169,7 +169,7 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
                         },
                       ),
                     ),
-                    SizedBox(height: media.width * 0.03),
+                    SizedBox(height: media.width * 0.02),
                     Container(
                       width: 360,
                       height: 63,
@@ -185,7 +185,7 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
                         },
                       ),
                     ),
-                    SizedBox(height: media.width * 0.05),
+                    SizedBox(height: media.width * 0.04),
                     const Text(
                       "You can do this later",
                       style: TextStyle(
