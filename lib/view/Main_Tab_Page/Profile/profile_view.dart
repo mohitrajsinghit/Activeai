@@ -1,3 +1,5 @@
+import 'package:activeai/view/Main_Tab_Page/Profile/editprofileview.dart';
+import 'package:activeai/view/Main_Tab_Page/Profile/upgradeplanview.dart';
 import 'package:flutter/material.dart';
 
 class ProfileView extends StatefulWidget {
@@ -30,17 +32,19 @@ class _ProfileViewState extends State<ProfileView> {
           Positioned(
             left: 13,
             top: 40,
-            child: _buildBox(
+            child: _buildButton(
               text: 'Upgrade Plan',
               imagePath: 'assets/img/bxs-crown.png',
+              onPressed: _onUpgradePlanPressed,
             ),
           ),
           Positioned(
             right: 13,
             top: 40,
-            child: _buildBox(
+            child: _buildButton(
               text: 'Edit Profile',
               imagePath: 'assets/img/edit-text.png',
+              onPressed: _onEditProfilePressed,
             ),
           ),
           Positioned(
@@ -53,7 +57,7 @@ class _ProfileViewState extends State<ProfileView> {
               followers: '10K',
               following: '200',
               points: '0',
-              pointsImage: 'assets/img/coin.png', // Path to the coin image
+              pointsImage: 'assets/img/coin.png',
             ),
           ),
         ],
@@ -61,14 +65,30 @@ class _ProfileViewState extends State<ProfileView> {
     );
   }
 
-  Widget _buildBox({required String text, required String imagePath}) {
-    return Container(
-      width: 140,
-      height: 31,
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 130, 123, 123).withOpacity(0.9),
-        borderRadius: BorderRadius.circular(100),
+  void _onUpgradePlanPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => UpgradePlanView()),
+    );
+  }
+
+  void _onEditProfilePressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => EditProfileView()),
+    );
+  }
+
+  Widget _buildButton(
+      {required String text,
+      required String imagePath,
+      required VoidCallback onPressed}) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        backgroundColor: Color.fromARGB(255, 130, 123, 123).withOpacity(0.9),
+        shape: StadiumBorder(),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +128,7 @@ class _ProfileViewState extends State<ProfileView> {
         ClipPath(
           clipper: HalfMoonClipper(),
           child: Container(
-            width: 404,
+            width: media.width * 0.9,
             height: 120,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             decoration: BoxDecoration(
@@ -123,8 +143,7 @@ class _ProfileViewState extends State<ProfileView> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(
-                          left: 25, top: 40), // Add padding to the username
+                      padding: const EdgeInsets.only(left: 25, top: 40),
                       child: Text(
                         username,
                         style: const TextStyle(
@@ -135,9 +154,7 @@ class _ProfileViewState extends State<ProfileView> {
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    const SizedBox(
-                        width:
-                            27), // Add a gap between the username and the stats
+                    const SizedBox(width: 27),
                     Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,

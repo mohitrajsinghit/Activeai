@@ -152,7 +152,7 @@ class _HomeViewState extends State<HomeView> {
                     ),
                   ],
                 ),
-                Padding(
+                const Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     'Comments section...', // Replace with actual comments
@@ -163,10 +163,10 @@ class _HomeViewState extends State<HomeView> {
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     onTap: () {
-                      // Handle view all comments action
+                      
                     },
                     child: Text(
-                      'View all comments', // Replace with translation or localization
+                      'View all comments', 
                       style: TextStyle(color: Colors.grey),
                     ),
                   ),

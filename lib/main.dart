@@ -1,4 +1,4 @@
-
+import 'package:activeai/view/Main_Tab_Page/Profile/upgradeplanview.dart';
 import 'package:activeai/view/on_boarding/started_view.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
         useMaterial3: true,
       ),
-      home: const StartedView(),
+      home: UpgradePlanView(),
     );
   }
 }

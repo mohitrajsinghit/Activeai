@@ -131,7 +131,7 @@ class _HeightState extends State<Height> {
         children: [
           Positioned.fill(
             child: DecoratedBox(
-              decoration: BoxDecoration(
+              decoration:const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/img/profile_bg.png"),
                   fit: BoxFit.cover,
@@ -141,21 +141,20 @@ class _HeightState extends State<Height> {
                 children: [
                   SizedBox(
                     height: 65,
-                  ), // Add space for the LinearProgressIndicator
+                  ), 
                   LinearProgressIndicator(
                     value: 0.500,
                     backgroundColor: Colors.black.withOpacity(
-                        0.5), // Set background color of the progress indicator
+                        0.5), 
                     valueColor: AlwaysStoppedAnimation<Color>(
-                        Colors.blue), // Set color of the progress bar
+                        Colors.blue), 
                   ),
                   Expanded(
                     child: Center(
                       child: Container(
                         width: double.infinity,
-                        height: 100, // Example height for the content
-                        color: Colors.transparent, // Color for the content area
-                        // Add your content here
+                        height: 100,
+                        color: Colors.transparent, 
                       ),
                     ),
                   ),
@@ -171,13 +170,13 @@ class _HeightState extends State<Height> {
               clipper: MyClipper(),
               child: Container(
                 height: MediaQuery.of(context).size.height *
-                    0.0433, // Reduced height
-                color: Colors.black, // Color for the curve
+                    0.0433, 
+                color: Colors.black, 
               ),
             ),
           ),
           Positioned(
-            // Position the image in the middle of the screen with specified dimensions
+           
             width: 73.01,
             height: 178.5,
             left: MediaQuery.of(context).size.width / 2 - 73.01 / 2,
