@@ -1,6 +1,7 @@
+import 'package:activeai/view/Main_Tab_Page/Home/post_page.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common/colo_extension.dart'; // Import your color extension
-import 'post_page.dart'; // Import the PostPage
+
 
 class Post {
   final String imageUrl;

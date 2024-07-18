@@ -1,15 +1,16 @@
-import 'package:activeai/view/Main_Tab_Page/Profile/payment.dart';
+import 'package:activeai/view/Main_Tab_Page/Home/home_view.dart';
+import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common_widget/custom_button.dart'; // Assuming you have RoundButton defined in custom_button.dart
 
-class UpgradePlanView extends StatefulWidget {
-  const UpgradePlanView({Key? key});
+class Payment extends StatefulWidget {
+  const Payment({Key? key});
 
   @override
-  State<UpgradePlanView> createState() => _UpgradePlanViewState();
+  State<Payment> createState() => _PaymentState();
 }
 
-class _UpgradePlanViewState extends State<UpgradePlanView> {
+class _PaymentState extends State<Payment> {
   late Size media;
 
   @override
@@ -51,7 +52,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
       ),
       body: Stack(
         children: [
-          Positioned.fill(
+          const Positioned.fill(
             child: DecoratedBox(
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -66,15 +67,15 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
             top: 50,
             child: Container(
               width: 380,
-              height: 300,
+              height: 280,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     "Premium",
                     style: TextStyle(
@@ -82,7 +83,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                       fontSize: 22,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -105,7 +106,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -128,12 +129,12 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Divider(
                     color: Colors.white,
                     thickness: 1,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Text(
                     "Billing",
                     style: TextStyle(
@@ -141,7 +142,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -164,12 +165,12 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Divider(
                     color: Colors.white,
                     thickness: 1,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -196,24 +197,53 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
               ),
             ),
           ),
-          Positioned(
-            left: media.width / 2 - 180,
-            bottom: 40,
-            child: RoundButton(
-              title: "Make Payment",
-              onPressed: () {
-                // Add your onPressed logic here
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Payment()),
-                );
-              },
-              height: 65,
-              width: 360,
-              borderRadius: 100,
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-            ),
-          ),
+          Stack(
+            children: [
+              const Positioned(
+                left: 20,
+                bottom: 40,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "\$120.00",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "To pay",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                right: 20,
+                bottom: 40,
+                child: RoundButton(
+                  title: "Make Payment",
+                  onPressed: () {
+                    // Add your onPressed logic here
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainTabView()),
+                    );
+                  },
+                  height: 63,
+                  width: 200,
+                  borderRadius: 100,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

@@ -1,5 +1,7 @@
+import 'package:activeai/view/Main_Tab_Page/Profile/payment.dart';
+import 'package:activeai/view/Main_Tab_Page/Profile/profile_view.dart';
 import 'package:activeai/view/Main_Tab_Page/Profile/upgradeplanview.dart';
-import 'package:activeai/view/on_boarding/started_view.dart';
+import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
         useMaterial3: true,
       ),
-      home: UpgradePlanView(),
+      home: const ProfileView(),
     );
   }
 }

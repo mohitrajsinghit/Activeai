@@ -91,7 +91,7 @@ class _OTPEmailState extends State<OTPEmail> {
         child: Column(
           children: [
             SizedBox(height: media.width * 0.15),
-            Text(
+            const Text(
               "Verify your email address",
               style: TextStyle(
                 color: Colors.white,
@@ -101,7 +101,7 @@ class _OTPEmailState extends State<OTPEmail> {
               ),
             ),
             SizedBox(height: media.width * 0.02),
-            Text(
+            const Text(
               "Enter the OTP sent to abjackson@gmail.com",
               style: TextStyle(
                 color: Colors.white,

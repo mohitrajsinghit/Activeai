@@ -186,7 +186,7 @@ class _AiSignupViewState extends State<AiSignupView> {
                         height: media.height * 0.01,
                       ),
                       RoundButton(
-                        title: "Upgrade",
+                        title: "Sign Up",
                         onPressed: () {
                           // Add your onPressed logic here
                         },

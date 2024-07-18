@@ -31,7 +31,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
@@ -40,7 +39,6 @@ dependencies:
   intl_phone_field: ^3.2.0
   animations: ^2.0.11
   video_player: ^2.4.2
-
 
 dev_dependencies:
   flutter_test:
@@ -53,10 +51,6 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
 
   # The following line ensures that the Material Icons font is
@@ -82,7 +76,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-
     - family: Roboto
       fonts:
         - asset: assets/font/Roboto-Light.ttf
@@ -91,3 +84,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: "AppIcon"
+  image_path: "assets/img/1.png"
+  remove_alpha_ios: true
