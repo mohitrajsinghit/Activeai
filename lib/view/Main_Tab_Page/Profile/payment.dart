@@ -1,7 +1,7 @@
-import 'package:activeai/view/Main_Tab_Page/Home/home_view.dart';
+
 import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
-import 'package:activeai/common_widget/custom_button.dart'; // Assuming you have RoundButton defined in custom_button.dart
+import 'package:activeai/common_widget/custom_button.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key? key});

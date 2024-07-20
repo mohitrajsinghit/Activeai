@@ -1,3 +1,4 @@
+import 'package:activeai/common_widget/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class UpgradePlanView extends StatefulWidget {
@@ -9,121 +10,6 @@ class UpgradePlanView extends StatefulWidget {
 
 class _UpgradePlanViewState extends State<UpgradePlanView> {
   late Size media;
-
-  void _showPlanDetails(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.black,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      builder: (BuildContext context) {
-        return Container(
-          padding: const EdgeInsets.all(16.0),
-          decoration: BoxDecoration(
-            color: const Color(0xFF141414),
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text(
-                "12 Months",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 194,
-                    height: 157,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          "Basic",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          "Access to Individual",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          "Access to Group of 5",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 194,
-                    height: 157,
-                    padding: const EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          "Premium",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          "Access to Individual",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Text(
-                          "Access to Group of 5",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              RoundButton(
-                text: "Upgrade",
-                onPressed: () {
-                  // Handle the upgrade logic here
-                },
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +82,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
             right: 16,
             top: 180,
             child: GestureDetector(
-              onTap: () => _showPlanDetails(context),
+              onTap: () => _showPlanDetails(context, media),
               child: Container(
                 height: 160,
                 padding: const EdgeInsets.all(16.0),
@@ -499,7 +385,6 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                                   ),
                                 ],
                               ),
-                              
                               SizedBox(width: 20),
                               Container(
                                 height: 90,
@@ -547,38 +432,202 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
       ),
     );
   }
-}
 
-// Assuming you have a custom widget RoundButton
-class RoundButton extends StatelessWidget {
-  final String text;
-  final VoidCallback onPressed;
-
-  const RoundButton({
-    required this.text,
-    required this.onPressed,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
-        ),
-        backgroundColor: Colors.blue,
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+  void _showPlanDetails(BuildContext context, Size media) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
       ),
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.all(16.0),
+          decoration: BoxDecoration(
+            color: const Color(0xFF141414),
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "12 Months",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 175,
+                    height: 157,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: media.width * 0.01,
+                        ),
+                        const Row(
+                          children: [
+                            // Image.asset(
+                            //   'assets/basic_icon.png', // Replace with your image asset path
+                            //   width: 20,
+                            //   height: 20,
+                            // ),
+                            SizedBox(width: 8),
+                            Text(
+                              "Basic",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: media.width * 0.04),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/img/no_tick.png',
+                              width: 20,
+                              height: 20,
+                            ),
+                            const SizedBox(width: 8),
+                            const Text(
+                              "Access to Individual",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: media.width * 0.04),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/img/cross.png',
+                              width: 20,
+                              height: 20,
+                            ),
+                            const SizedBox(width: 8),
+                            const Text(
+                              "Access to Group of 5",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 175,
+                    height: 157,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: media.width * 0.01),
+                        const Row(
+                          children: [
+                            // Image.asset(
+                            //   'assets/img/no_tick.png',
+                            //   width: 20,
+                            //   height: 20,
+                            // ),
+                            SizedBox(width: 8),
+                            Text(
+                              "Premium",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: media.width * 0.04),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/img/no_tick.png',
+                              width: 20,
+                              height: 20,
+                            ),
+                            const SizedBox(width: 8),
+                            const Text(
+                              "Access to Individual",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: media.width * 0.04),
+                        Row(
+                          children: [
+                            Image.asset(
+                              'assets/img/no_tick.png',
+                              width: 20,
+                              height: 20,
+                            ),
+                            const SizedBox(width: 8),
+                            const Text(
+                              "Access to Group of 5",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: media.width * 0.04,
+              ),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "* Choose your plan",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              RoundButton(
+                title: "Upgrade",
+                height: 60,
+                width: 360,
+                onPressed: () {
+                  // Handle the upgrade logic here
+                },
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
-
