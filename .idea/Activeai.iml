@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/libphonenumber_plugin/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/libphonenumber_plugin/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/libphonenumber_plugin/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/libphonenumber_plugin/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/libphonenumber_plugin/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/libphonenumber_plugin/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/video_player_avfoundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/video_player_avfoundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/video_player_avfoundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/video_player_avfoundation/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/video_player_avfoundation/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Activeai/ios/.symlinks/plugins/video_player_avfoundation/example/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
