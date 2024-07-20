@@ -67,7 +67,7 @@ class _PaymentState extends State<Payment> {
             top: 50,
             child: Container(
               width: 380,
-              height: 280,
+              height: 320,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.1),
@@ -165,12 +165,12 @@ class _PaymentState extends State<Payment> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 12),
                   Divider(
                     color: Colors.white,
                     thickness: 1,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

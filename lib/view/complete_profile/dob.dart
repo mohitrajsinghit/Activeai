@@ -122,7 +122,7 @@ class _DOBState extends State<DOB> {
                     height: MediaQuery.of(context).copyWith().size.height /
                         3, // Reduces the height of the picker
                     child: CupertinoTheme(
-                      data: CupertinoThemeData(
+                      data:const CupertinoThemeData(
                         textTheme: CupertinoTextThemeData(
                           dateTimePickerTextStyle: TextStyle(
                             fontSize: 23,
