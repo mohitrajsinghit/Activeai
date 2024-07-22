@@ -491,7 +491,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                               ),
                               Row(
                                 children: [
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   Text(
                                     "Basic",
                                     style: TextStyle(
@@ -569,7 +569,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                               SizedBox(height: media.width * 0.01),
                               Row(
                                 children: [
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   Text(
                                     "Premium",
                                     style: TextStyle(
@@ -649,7 +649,7 @@ class _UpgradePlanViewState extends State<UpgradePlanView> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Payment(),
+                          builder: (context) => const Payment(),
                         ),
                       );
                     },
