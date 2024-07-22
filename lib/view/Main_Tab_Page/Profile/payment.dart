@@ -1,4 +1,3 @@
-
 import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common_widget/custom_button.dart';
@@ -67,7 +66,7 @@ class _PaymentState extends State<Payment> {
             top: 50,
             child: Container(
               width: 380,
-              height: 320,
+              height: 300,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.1),

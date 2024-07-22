@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Roboto",
         useMaterial3: true,
       ),
-      home: const UpgradePlanView( ),
+      home: const MainTabView( ),
     );
   }
 }
