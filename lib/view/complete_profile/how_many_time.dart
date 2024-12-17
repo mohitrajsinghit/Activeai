@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:activeai/view/complete_profile/what_is_your_goal.dart';
 import 'package:activeai/common/colo_extension.dart';
 import 'package:activeai/common_widget/round_button.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:io';
+import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
 
 class MyClipper extends CustomClipper<Path> {
   @override
@@ -41,6 +47,22 @@ class HowManyTimes extends StatefulWidget {
 class _HowManyTimesState extends State<HowManyTimes> {
   late Size media;
   String? selectedFrequency; // Initialize selectedFrequency as null
+  Future<void> writeToFile(String? content) async {
+  try {
+    final directory = await getApplicationDocumentsDirectory();
+    final filePath = '${directory.path}/inputfile.txt';
+    final file = File(filePath);
+    content=content.toString();
+    // Write the file
+    await file.writeAsString(
+      content + '\t', 
+      mode: FileMode.append,
+    );
+    print('File written successfully at $filePath');
+  } catch (e) {
+    print('Error occurred: $e');
+  }
+}
 
   @override
   Widget build(BuildContext context) {

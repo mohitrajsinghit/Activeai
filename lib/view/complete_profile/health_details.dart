@@ -1,10 +1,16 @@
+import 'package:activeai/view/complete_profile/what_is_your_goal.dart';
 import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common_widget/health_button.dart';
 import 'package:activeai/view/complete_profile/how_many_time.dart';
 import 'package:activeai/common/colo_extension.dart';
 import 'package:activeai/common_widget/round_button.dart';
-
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:io';
+import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
 class HealthDetails extends StatefulWidget {
   const HealthDetails({Key? key});
 
@@ -15,6 +21,22 @@ class HealthDetails extends StatefulWidget {
 class _HealthDetailsState extends State<HealthDetails> {
   late Size media;
   Set<String> selectedHealth = {};
+    Future<void> writeToFile(Set<String> content) async {
+  try {
+    final directory = await getApplicationDocumentsDirectory();
+    final filePath = '${directory.path}/inputfile.txt';
+    final file = File(filePath);
+    String con=content.join(",");
+    // Write the file
+    await file.writeAsString(
+      con + '\t',
+      mode: FileMode.append,
+    );
+    print('File written successfully at $filePath');
+  } catch (e) {
+    print('Error occurred: $e');
+  }
+}
 
   @override
   Widget build(BuildContext context) {

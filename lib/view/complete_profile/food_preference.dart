@@ -3,6 +3,12 @@ import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common/colo_extension.dart';
 import 'package:activeai/common_widget/round_button.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:io';
+import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
 
 class FoodPreference extends StatefulWidget {
   const FoodPreference({Key? key});
@@ -14,6 +20,22 @@ class FoodPreference extends StatefulWidget {
 class _FoodPreferenceState extends State<FoodPreference> {
   late Size media;
   String? selectedPreference;
+    Future<void> writeToFile(String? content) async {
+  try {
+    final directory = await getApplicationDocumentsDirectory();
+    final filePath = '${directory.path}/inputfile.txt';
+    final file = File(filePath);
+    content=content.toString();
+    // Write the file
+    await file.writeAsString(
+      content + '\t', 
+      mode: FileMode.append,
+    );
+    print('File written successfully at $filePath');
+  } catch (e) {
+    print('Error occurred: $e');
+  }
+}
 
   @override
   Widget build(BuildContext context) {

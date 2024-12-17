@@ -4,6 +4,13 @@ import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common_widget/round_button.dart';
 import 'package:activeai/common_widget/MySwitch.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:io';
+import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
+
 
 class ValueScroller extends StatefulWidget {
   final double value;
@@ -89,6 +96,22 @@ class Weight extends StatefulWidget {
 
 class _WeightState extends State<Weight> {
   double weightValue = 185; // Default weight value
+  Future<void> writeToFile(double content) async {
+  try {
+    final directory = await getApplicationDocumentsDirectory();
+    final filePath = '${directory.path}/inputfile.txt';
+    final file = File(filePath);
+    String con=content.toString();
+    // Write the file
+    await file.writeAsString(
+      con + '\t', 
+      mode: FileMode.append,
+    );
+    print('File written successfully at $filePath');
+  } catch (e) {
+    print('Error occurred: $e');
+  }
+}
 
   @override
   Widget build(BuildContext context) {

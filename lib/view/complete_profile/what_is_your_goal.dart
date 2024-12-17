@@ -2,6 +2,12 @@ import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common/colo_extension.dart';
 import 'package:activeai/common_widget/round_button.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:io';
+import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
 
 class WhatIsYourGoal extends StatefulWidget {
   const WhatIsYourGoal({Key? key}) : super(key: key);
@@ -13,6 +19,63 @@ class WhatIsYourGoal extends StatefulWidget {
 class _WhatIsYourGoalState extends State<WhatIsYourGoal> {
   late Size media;
   String? selectedGoal;
+  Future<void> writeToFile(String? content) async {
+  try {
+    final directory = await getApplicationDocumentsDirectory();
+    final filePath = '${directory.path}/inputfile.txt';
+    final file = File(filePath);
+    content=content.toString();
+    await file.writeAsString(
+      content,
+      mode: FileMode.append,
+    );
+    print('File written successfully at $filePath');
+  } catch (e) {
+    print('Error occurred: $e');
+  }
+}
+
+Future<String?> readLoggedFilePath() async {
+  try {
+    final directory = await getApplicationDocumentsDirectory();
+    final file = File('${directory.path}/inputfile.txt');
+    
+    if (await file.exists()) {
+      String filePath = await file.readAsString();
+      return filePath;
+    } else {
+      print('Log file does not exist.');
+      return null;
+    }
+  } catch (e) {
+    print('Error reading log file: $e');
+    return null;
+  }
+}
+Future<void> runPythonScript(String data) async {
+  try {
+    String command1 = 'cd';
+    List<String> arguments1 = ['downloads/activeai'];
+    ProcessResult result1 = await Process.run(command1, arguments1);
+    String command = 'python3';
+    List<String> arguments = ['app.py', data];
+    ProcessResult result = await Process.run(command, arguments);
+    if (result.exitCode == 0 || result1.exitCode == 0 ) {
+      print('Command succeeded with output:');
+    } else {
+      print('Command failed with error:');
+    }
+  } catch (e) {
+    print('Error running command: $e');
+  }
+}
+
+void main() async {
+  // Example data to process
+  String data = 'Some data to process';
+
+  await runPythonScript(data);
+}
 
   @override
   Widget build(BuildContext context) {
