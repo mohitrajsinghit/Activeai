@@ -1,6 +1,6 @@
 import 'package:activeai/view/Main_Tab_Page/Home/post_page.dart';
 import 'package:flutter/material.dart';
-import 'package:activeai/common/colo_extension.dart'; // Import your color extension
+import 'package:activeai/common/colo_extension.dart'; 
 
 
 class Post {
@@ -35,7 +35,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     super.initState();
-    // Initialize posts with different usernames and images
     posts = [
       Post(
         imageUrl: 'assets/img/post1.png',
@@ -57,7 +56,7 @@ class _HomeViewState extends State<HomeView> {
         imageUrl: 'assets/img/post5.png',
         username: 'victorr',
       ),
-      // Add more posts as needed
+      
     ];
   }
 
@@ -65,7 +64,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     media = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: TColor.black, // Assuming TColor is defined in your colo_extension.dart file
+      backgroundColor: TColor.black, 
       body: ListView.builder(
         itemCount: posts.length,
         itemBuilder: (context, index) {
@@ -94,7 +93,7 @@ class _HomeViewState extends State<HomeView> {
                       CircleAvatar(
                         radius: 20,
                         backgroundImage: AssetImage(
-                          'assets/img/user_${index % 5 + 1}.png', // Change user avatar dynamically
+                          'assets/img/user_${index % 5 + 1}.png',
                         ),
                       ),
                       SizedBox(width: 16),
@@ -139,7 +138,6 @@ class _HomeViewState extends State<HomeView> {
                           icon: Icon(Icons.mode_comment_outlined),
                           color: Colors.white,
                           onPressed: () {
-                            // Handle comment action
                           },
                         ),
                       ],
@@ -148,7 +146,6 @@ class _HomeViewState extends State<HomeView> {
                       icon: Icon(Icons.share),
                       color: Colors.white,
                       onPressed: () {
-                        // Handle share action
                       },
                     ),
                   ],
@@ -156,7 +153,7 @@ class _HomeViewState extends State<HomeView> {
                 const Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Comments section...', // Replace with actual comments
+                    'Comments section...',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),

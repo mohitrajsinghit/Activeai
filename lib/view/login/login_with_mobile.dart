@@ -3,6 +3,7 @@ import 'package:activeai/common_widget/round_button.dart';
 import 'package:activeai/common_widget/round_button_black.dart';
 import 'package:activeai/view/login/login_with_email.dart';
 import 'package:activeai/view/login/otp_mobile.dart';
+import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
@@ -188,17 +189,29 @@ class _LoginWithMobileState extends State<LoginWithMobile> {
                         ),
                       ),
                       SizedBox(height: media.width * 0.02),
-                      const Text(
-                        "You can do this later",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.grey,
-                          fontFamily: "Roboto",
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300,
-                        ),
+                      InkWell(
+                    onTap: () {
+                      // Add your navigation logic here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                MainTabView()), // Replace `PageName` with your actual page widget
+                      );
+                    },
+                    child: Text(
+                      "You can do this later",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.grey,
+                        fontFamily: "Roboto",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w300,
                       ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                     ],
                   ),
                 ),

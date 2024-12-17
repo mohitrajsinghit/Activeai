@@ -185,26 +185,35 @@ class _WhatIsYourGoalState extends State<WhatIsYourGoal> {
                         },
                       ),
                       SizedBox(height: media.width * 0.06),
-                      const Text(
-                        "You can do this later",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.grey,
-                          fontFamily: "Roboto",
-                          fontSize: 20,
-                          fontWeight: FontWeight.w300,
-                        ),
-                        textAlign: TextAlign.center,
+                                             InkWell(
+                    onTap: () {
+                      // Add your navigation logic here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                MainTabView()), // Replace `PageName` with your actual page widget
+                      );
+                    },
+                    child: Text(
+                      "You can do this later",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.grey,
+                        fontFamily: "Roboto",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w300,
                       ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                       SizedBox(height: media.width * 0.06),
                       Container(
                         height: 60,
                         child: RoundButton(
                           title: "Continue",
                           onPressed: () {
-                            // Add your onPressed logic here
-                            // Navigate to the next page
                             Navigator.push(
                               context,
                               MaterialPageRoute(

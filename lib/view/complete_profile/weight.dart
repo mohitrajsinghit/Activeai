@@ -1,5 +1,6 @@
 import 'package:activeai/common/colo_extension.dart';
 import 'package:activeai/view/complete_profile/height.dart';
+import 'package:activeai/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:activeai/common_widget/round_button.dart';
 import 'package:activeai/common_widget/MySwitch.dart';
@@ -223,15 +224,27 @@ class _WeightState extends State<Weight> {
                     },
                   ),
                   SizedBox(height: media.width * 0.07),
-                  const Text(
-                    "You can do this later",
-                    style: TextStyle(
-                      color: Colors.grey,
-                      decoration: TextDecoration.underline,
-                      decorationColor: Colors.grey,
-                      fontFamily: "Roboto",
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300,
+                                        InkWell(
+                    onTap: () {
+                      // Add your navigation logic here
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                MainTabView()), // Replace `PageName` with your actual page widget
+                      );
+                    },
+                    child: Text(
+                      "You can do this later",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.grey,
+                        fontFamily: "Roboto",
+                        fontSize: 20,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                   SizedBox(height: media.width * 0.08),
